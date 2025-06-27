@@ -1,0 +1,24 @@
+deptrac:
+  paths:
+    - ./src
+  layers:
+    - name: Core
+      collectors:
+        - type: classLike
+          value: DeptracPortsAdaptersSample\\Core\\.*
+    - name: PackageA
+      collectors:
+        - type: classLike
+          value: DeptracPortsAdaptersSample\\PackageA\\.*
+    - name: PackageB
+      collectors:
+        - type: classLike
+          value: DeptracPortsAdaptersSample\\PackageB\\.*
+    - name: PackageC
+      collectors:
+        - type: classLike
+          value: DeptracPortsAdaptersSample\\PackageC\\.*
+  ruleset:
+    PackageA:
+      - Core
+      - PackageB
