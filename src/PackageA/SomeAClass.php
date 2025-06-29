@@ -2,14 +2,20 @@
 
 namespace DeptracPortsAdaptersSample\PackageA;
 
-use DeptracPortsAdaptersSample\Core\Logger;
-use DeptracPortsAdaptersSample\PackageB\SomeBClass;
+use DeptracPortsAdaptersSample\PackageA\Port\LoggerPort;
+use DeptracPortsAdaptersSample\PackageA\Port\PackageBPort;
 
 class SomeAClass
 {
-    public function doSomethingAThingy(SomeBClass $someBClass, Logger $logger): void
+    public function __construct(
+        private readonly LoggerPort $loggerPort,
+        private readonly PackageBPort $packageBPort
+    ) {
+    }
+
+    public function doSomethingAThingy(): void
     {
-        $someBClass->doSomethingBThingy();
-        $logger->log();
+        $this->packageBPort->doSomethingBThingy();
+        $this->loggerPort->log();
     }
 }
