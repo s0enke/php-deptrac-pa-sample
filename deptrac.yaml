@@ -6,10 +6,27 @@ deptrac:
       collectors:
         - type: classLike
           value: DeptracPortsAdaptersSample\\Core\\.*
-    - name: PackageA
+    - name: PackageA_DrivenLayer
       collectors:
         - type: classLike
-          value: DeptracPortsAdaptersSample\\PackageA\\.*
+          value: DeptracPortsAdaptersSample\\PackageA\\DrivenPort\\.*
+        - type: classLike
+          value: DeptracPortsAdaptersSample\\PackageA\\DrivenAdapter\\.*
+        - type: classLike
+          value: DeptracPortsAdaptersSample\\PackageA\\Adapter\\.*
+    - name: PackageA_Core
+      collectors:
+        - type: bool
+          must:
+            - type: classLike
+              value: DeptracPortsAdaptersSample\\PackageA\\.*
+          must_not:
+            - type: classLike
+              value: DeptracPortsAdaptersSample\\PackageA\\DrivenPort\\.*
+            - type: classLike
+              value: DeptracPortsAdaptersSample\\PackageA\\DrivenAdapter\\.*
+            - type: classLike
+              value: DeptracPortsAdaptersSample\\PackageA\\Adapter\\.*
     - name: PackageB
       collectors:
         - type: classLike
@@ -19,6 +36,10 @@ deptrac:
         - type: classLike
           value: DeptracPortsAdaptersSample\\PackageC\\.*
   ruleset:
-    PackageA:
+    PackageA_Core:
+      - Core
+      - PackageA_DrivenLayer
+    PackageA_DrivenLayer:
       - Core
       - PackageB
+      - PackageC
