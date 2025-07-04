@@ -2,7 +2,7 @@
 
 namespace DeptracPortsAdaptersSample\PackageA\Adapter;
 
-use DeptracPortsAdaptersSample\PackageA\Port\PackageBPort;
+use DeptracPortsAdaptersSample\PackageA\DrivenPort\PackageBPort;
 use DeptracPortsAdaptersSample\PackageB\SomeBClass;
 
 class PackageBAdapter implements PackageBPort

@@ -2,8 +2,8 @@
 
 namespace DeptracPortsAdaptersSample\PackageA;
 
-use DeptracPortsAdaptersSample\PackageA\Port\LoggerPort;
-use DeptracPortsAdaptersSample\PackageA\Port\PackageBPort;
+use DeptracPortsAdaptersSample\PackageA\DrivenPort\LoggerPort;
+use DeptracPortsAdaptersSample\PackageA\DrivenPort\PackageBPort;
 
 class SomeAClass
 {

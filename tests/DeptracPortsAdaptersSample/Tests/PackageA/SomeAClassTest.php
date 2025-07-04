@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace DeptracPortsAdaptersSample\Tests\PackageA;
 
-use DeptracPortsAdaptersSample\PackageA\Port\LoggerPort;
-use DeptracPortsAdaptersSample\PackageA\Port\PackageBPort;
+use DeptracPortsAdaptersSample\PackageA\DrivenPort\LoggerPort;
+use DeptracPortsAdaptersSample\PackageA\DrivenPort\PackageBPort;
 use DeptracPortsAdaptersSample\PackageA\SomeAClass;
 use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;

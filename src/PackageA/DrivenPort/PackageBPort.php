@@ -1,6 +1,6 @@
 <?php
 
-namespace DeptracPortsAdaptersSample\PackageA\Port;
+namespace DeptracPortsAdaptersSample\PackageA\DrivenPort;
 
 interface PackageBPort
 {

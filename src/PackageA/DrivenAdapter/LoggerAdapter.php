@@ -1,9 +1,9 @@
 <?php
 
-namespace DeptracPortsAdaptersSample\PackageA\Adapter;
+namespace DeptracPortsAdaptersSample\PackageA\DrivenAdapter;
 
 use DeptracPortsAdaptersSample\Core\Logger;
-use DeptracPortsAdaptersSample\PackageA\Port\LoggerPort;
+use DeptracPortsAdaptersSample\PackageA\DrivenPort\LoggerPort;
 
 class LoggerAdapter implements LoggerPort
 {
