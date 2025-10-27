@@ -14,10 +14,6 @@ deptrac:
       collectors:
         - type: classLike
           value: DeptracPortsAdaptersSample\\PackageB\\.*
-    - name: PackageC
-      collectors:
-        - type: classLike
-          value: DeptracPortsAdaptersSample\\PackageC\\.*
   ruleset:
     PackageA:
       - Core
