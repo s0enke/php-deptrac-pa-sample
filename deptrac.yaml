@@ -2,19 +2,19 @@ deptrac:
   paths:
     - ./src
   layers:
-    - name: Core
+    - name: Infrastructure
       collectors:
         - type: classLike
-          value: DeptracPortsAdaptersSample\\Core\\.*
-    - name: PackageA
+          value: DeptracPortsAdaptersSample\\Infrastructure\\.*
+    - name: Domain
       collectors:
         - type: classLike
-          value: DeptracPortsAdaptersSample\\PackageA\\.*
-    - name: PackageB
+          value: DeptracPortsAdaptersSample\\Domain\\.*
+    - name: Payment
       collectors:
         - type: classLike
-          value: DeptracPortsAdaptersSample\\PackageB\\.*
+          value: DeptracPortsAdaptersSample\\Payment\\.*
   ruleset:
-    PackageA:
-      - Core
-      - PackageB
+    Domain:
+      - Infrastructure
+      - Payment

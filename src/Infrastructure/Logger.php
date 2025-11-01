@@ -1,6 +1,6 @@
 <?php
 
-namespace DeptracPortsAdaptersSample\Core;
+namespace DeptracPortsAdaptersSample\Infrastructure;
 
 class Logger
 {
