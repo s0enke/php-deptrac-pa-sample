@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace DeptracPortsAdaptersSample\Tests\Domain;
+namespace DeptracPortsAdaptersSample\Tests\Order;
 
 use DeptracPortsAdaptersSample\Infrastructure\Logger;
-use DeptracPortsAdaptersSample\Domain\OrderProcessor;
+use DeptracPortsAdaptersSample\Order\OrderProcessor;
 use DeptracPortsAdaptersSample\Payment\PaymentGateway;
 use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
@@ -15,13 +15,6 @@ final class OrderProcessorTest extends TestCase
     private OrderProcessor $sut;
     private MockObject|PaymentGateway $paymentGatewayMock;
     private MockObject|Logger $loggerMock;
-
-    protected function setUp(): void
-    {
-        $this->paymentGatewayMock = $this->createMock(PaymentGateway::class);
-        $this->loggerMock = $this->createMock(Logger::class);
-        $this->sut = new OrderProcessor();
-    }
 
     public function testProcessOrderCalls(): void
     {
@@ -34,5 +27,12 @@ final class OrderProcessorTest extends TestCase
             ->method('log');
 
         $this->sut->processOrder($this->paymentGatewayMock, $this->loggerMock);
+    }
+
+    protected function setUp(): void
+    {
+        $this->paymentGatewayMock = $this->createMock(PaymentGateway::class);
+        $this->loggerMock = $this->createMock(Logger::class);
+        $this->sut = new OrderProcessor();
     }
 }

@@ -6,15 +6,15 @@ deptrac:
       collectors:
         - type: classLike
           value: DeptracPortsAdaptersSample\\Infrastructure\\.*
-    - name: Domain
+    - name: Order
       collectors:
         - type: classLike
-          value: DeptracPortsAdaptersSample\\Domain\\.*
+          value: DeptracPortsAdaptersSample\\Order\\.*
     - name: Payment
       collectors:
         - type: classLike
           value: DeptracPortsAdaptersSample\\Payment\\.*
   ruleset:
-    Domain:
+    Order:
       - Infrastructure
       - Payment

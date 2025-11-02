@@ -1,6 +1,6 @@
 <?php
 
-namespace DeptracPortsAdaptersSample\Domain;
+namespace DeptracPortsAdaptersSample\Order;
 
 use DeptracPortsAdaptersSample\Infrastructure\Logger;
 use DeptracPortsAdaptersSample\Payment\PaymentGateway;
