@@ -14,7 +14,13 @@ deptrac:
       collectors:
         - type: classLike
           value: DeptracPortsAdaptersSample\\Payment\\.*
+    - name: Billing
+      collectors:
+        - type: classLike
+          value: DeptracPortsAdaptersSample\\Billing\\.*
   ruleset:
     Order:
       - Infrastructure
       - Payment
+    Billing:
+      - Infrastructure
