@@ -3,13 +3,13 @@
 namespace DeptracPortsAdaptersSample\Order;
 
 use DeptracPortsAdaptersSample\Infrastructure\Logger;
-use DeptracPortsAdaptersSample\Payment\PaymentGateway;
+use DeptracPortsAdaptersSample\Payment\Port\ForPaymentUseCase;
 
 class OrderProcessor
 {
-    public function processOrder(PaymentGateway $paymentGateway, Logger $logger): void
+    public function processOrder(ForPaymentUseCase $forPayment, Logger $logger): void
     {
-        $paymentGateway->charge();
+        $forPayment->charge();
         $logger->log();
     }
 }

@@ -10,10 +10,19 @@ deptrac:
       collectors:
         - type: classLike
           value: DeptracPortsAdaptersSample\\Order\\.*
-    - name: Payment
+    - name: Payment_Ports
       collectors:
         - type: classLike
-          value: DeptracPortsAdaptersSample\\Payment\\.*
+          value: DeptracPortsAdaptersSample\\Payment\\Port\\.*
+    - name: Payment_Adapters
+      collectors:
+        - type: bool
+          must:
+            - type: classLike
+              value: DeptracPortsAdaptersSample\\Payment\\.*
+          must_not:
+            - type: layer
+              value: Payment_Ports
     - name: Billing
       collectors:
         - type: classLike
@@ -21,6 +30,8 @@ deptrac:
   ruleset:
     Order:
       - Infrastructure
-      - Payment
+      - Payment_Ports
     Billing:
       - Infrastructure
+    Payment_Adapters:
+      - Payment_Ports
