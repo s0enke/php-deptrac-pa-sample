@@ -4,7 +4,7 @@ namespace DeptracPortsAdaptersSample\Payment;
 
 use DeptracPortsAdaptersSample\Payment\DrivingPort\ForPaymentUseCase;
 
-class PaymentUseCaseGateway implements ForPaymentUseCase
+class PaymentGateway implements ForPaymentUseCase
 {
     public function charge(): void
     {
