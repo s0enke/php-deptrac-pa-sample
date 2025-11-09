@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace DeptracPortsAdaptersSample\Tests\Order;
 
 use DeptracPortsAdaptersSample\Infrastructure\Logger;
+use DeptracPortsAdaptersSample\Order\DrivenPort\Adapter\ForPayment;
 use DeptracPortsAdaptersSample\Order\OrderProcessor;
 use DeptracPortsAdaptersSample\Payment\DrivingPort\ForPaymentUseCase;
 use PHPUnit\Framework\MockObject\MockObject;
@@ -26,7 +27,7 @@ final class OrderProcessorTest extends TestCase
             ->expects($this->once())
             ->method('log');
 
-        $this->sut->processOrder($this->paymentMock, $this->loggerMock);
+        $this->sut->processOrder(new ForPayment($this->paymentMock), $this->loggerMock);
     }
 
     protected function setUp(): void

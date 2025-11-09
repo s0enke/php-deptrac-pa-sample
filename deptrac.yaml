@@ -8,10 +8,19 @@ deptrac:
       collectors:
         - type: classLike
           value: DeptracPortsAdaptersSample\\Infrastructure\\.*
-    - name: Order
+    - name: Order_DrivenPorts
       collectors:
         - type: classLike
-          value: DeptracPortsAdaptersSample\\Order\\.*
+          value: DeptracPortsAdaptersSample\\Order\\DrivenPort\\.*
+    - name: Order
+      collectors:
+        - type: bool
+          must:
+            - type: classLike
+              value: DeptracPortsAdaptersSample\\Order\\.*
+          must_not:
+            - type: layer
+              value: Order_DrivenPorts
     - name: Payment_DrivingPorts
       collectors:
         - type: classLike
@@ -32,6 +41,8 @@ deptrac:
   ruleset:
     Order:
       - Infrastructure
+      - Order_DrivenPorts
+    Order_DrivenPorts:
       - Payment_DrivingPorts
     Billing:
       - Infrastructure
