@@ -1,3 +1,5 @@
+imports:
+  - deptrac.baseline.yaml
 deptrac:
   paths:
     - ./src
@@ -10,11 +12,11 @@ deptrac:
       collectors:
         - type: classLike
           value: DeptracPortsAdaptersSample\\Order\\.*
-    - name: Payment_Ports
+    - name: Payment_DrivenPorts
       collectors:
         - type: classLike
           value: DeptracPortsAdaptersSample\\Payment\\Port\\.*
-    - name: Payment_Adapters
+    - name: Payment
       collectors:
         - type: bool
           must:
@@ -22,7 +24,7 @@ deptrac:
               value: DeptracPortsAdaptersSample\\Payment\\.*
           must_not:
             - type: layer
-              value: Payment_Ports
+              value: Payment_DrivenPorts
     - name: Billing
       collectors:
         - type: classLike
@@ -30,8 +32,8 @@ deptrac:
   ruleset:
     Order:
       - Infrastructure
-      - Payment_Ports
+      - Payment_DrivenPorts
     Billing:
       - Infrastructure
-    Payment_Adapters:
-      - Payment_Ports
+    Payment:
+      - Payment_DrivenPorts
