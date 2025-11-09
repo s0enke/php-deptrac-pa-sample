@@ -1,6 +1,6 @@
 <?php
 
-namespace DeptracPortsAdaptersSample\Payment\Port;
+namespace DeptracPortsAdaptersSample\Payment\DrivingPort;
 
 interface ForPaymentUseCase
 {

@@ -3,7 +3,7 @@
 namespace DeptracPortsAdaptersSample\Order;
 
 use DeptracPortsAdaptersSample\Infrastructure\Logger;
-use DeptracPortsAdaptersSample\Payment\Port\ForPaymentUseCase;
+use DeptracPortsAdaptersSample\Payment\DrivingPort\ForPaymentUseCase;
 
 class OrderProcessor
 {

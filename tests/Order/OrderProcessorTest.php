@@ -6,7 +6,7 @@ namespace DeptracPortsAdaptersSample\Tests\Order;
 
 use DeptracPortsAdaptersSample\Infrastructure\Logger;
 use DeptracPortsAdaptersSample\Order\OrderProcessor;
-use DeptracPortsAdaptersSample\Payment\Port\ForPaymentUseCase;
+use DeptracPortsAdaptersSample\Payment\DrivingPort\ForPaymentUseCase;
 use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
 

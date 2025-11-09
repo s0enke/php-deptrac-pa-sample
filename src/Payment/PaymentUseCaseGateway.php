@@ -2,7 +2,7 @@
 
 namespace DeptracPortsAdaptersSample\Payment;
 
-use DeptracPortsAdaptersSample\Payment\Port\ForPaymentUseCase;
+use DeptracPortsAdaptersSample\Payment\DrivingPort\ForPaymentUseCase;
 
 class PaymentUseCaseGateway implements ForPaymentUseCase
 {
